@@ -4,13 +4,14 @@
   font-weight: var(--fw-semi-bold);
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
-  transition: background-color 350ms linear;
+  transition: all 350ms linear;
 }
 
 .btn__cta:link,
 .btn__cta:visited {
   background-color: var(--primary-clr-orange);
   color: var(--primary-clr-white);
+  display: inline-block;
 }
 
 .btn__cta:hover,
@@ -28,6 +29,21 @@
 .btn__outline:active {
   background-color: var(--primary-clr-accent-100);
   outline: 3px solid var(--primary-clr-white);
+}
+
+.link:link,
+.link:visited {
+  color: var(--primary-clr-orange);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding: 2px;
+  transition: all 300ms;
+}
+
+.link:hover,
+.link:active {
+  color: var(--primary-clr-accent-800);
+  border-bottom: 1px solid transparent;
 }
 
 /* HEADER */
@@ -132,11 +148,13 @@
 
 /* FEATURED IN SECTION */
 .features {
-  padding: 4.8rem 0;
+  padding: 4.8rem 0 3.2rem 0;
 }
 
 .logos img {
   height: 3.2rem;
+  filter: brightness(0);
+  opacity: 0.5;
 }
 
 .logos {
@@ -151,6 +169,7 @@
   font-weight: var(--fw-medium);
   text-align: center;
   margin-block-end: 2.4rem;
+  color: var(--primary-clr-grey-500);
 }
 
 /* HOW IT WORKS SECTION */
@@ -199,4 +218,293 @@
 .description {
   font-size: 1.8rem;
   line-height: 1.6;
+}
+
+/* MEALS SECTION */
+.section-meals {
+  padding-block: 9.6rem;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 450ms;
+}
+
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  color: var(--primary-clr-grey-600);
+  font-weight: var(--fw-semi-bold);
+  margin-bottom: 3.2rem;
+}
+
+.meal-content {
+  padding: 4.8rem;
+  padding-top: 3.2rem;
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 4px;
+}
+
+.tag__vegetarian {
+  background-color: #51cf66;
+}
+
+.tag__vegan {
+  background-color: #94d82d;
+}
+
+.tag__paleo {
+  background-color: #ffd43b;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--primary-clr-grey-600);
+  border-radius: 100px;
+  font-weight: var(--fw-bold);
+}
+
+.meal-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-icon {
+  font-size: 2.4rem;
+  color: var(--primary-clr-orange);
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* TESTIMONIAL SECTION */
+.section-testimonials {
+  background-color: var(--primary-clr-accent-100);
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  transition: all 400ms ease;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+}
+
+.gallery:has(.gallery-item:hover) .gallery-item:not(:has(:hover)) {
+  transform: scale(0.95);
+  opacity: 0.4;
+}
+
+/* PRICING SECTION */
+.section-pricing {
+  padding-block: 9.6rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  border-radius: 11px;
+  padding: 4.8rem;
+  width: 75%;
+}
+
+.pricing-plan:first-of-type {
+  justify-self: end;
+  outline: 2px solid var(--primary-clr-accent-100);
+}
+
+.pricing-plan:not(:first-of-type) {
+  position: relative;
+  background-color: var(--primary-clr-accent-100);
+  overflow: hidden;
+}
+
+.pricing-plan:not(:first-of-type)::after {
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  content: "Best value";
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  background-color: #ffd43b;
+  color: var(--primary-clr-grey-600);
+  padding: 0.8rem 8rem;
+  transform: rotate(45deg);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-name {
+  color: var(--primary-clr-accent-800);
+  font-weight: var(--fw-semi-bold);
+  font-size: 2rem;
+  letter-spacing: 0.75;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+}
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: var(--fw-semi-bold);
+  color: var(--primary-clr-grey-600);
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: var(--fw-medium);
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--primary-clr-grey-500);
+}
+
+.plan-sign-up {
+  /* margin-top: 4.8rem; */
+  margin-top: auto;
+}
+
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.feature-icon {
+  color: var(--primary-clr-orange);
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: var(--primary-clr-accent-100);
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.feature-title {
+  font-size: 2.4rem;
+  font-weight: var(--fw-bold);
+  color: var(--primary-clr-grey-600);
+  margin-bottom: 1.6rem;
+}
+
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+
+/* CTA SECTION */
+.section-cta {
+  padding-block: 9.6rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: linear-gradient(
+    to right bottom,
+    var(--primary-clr-accent-200),
+    var(--primary-clr-orange)
+  );
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.cta-text-box,
+.cta-text-box .secondary-heading {
+  color: var(--primary-clr-accent-900);
+}
+
+.cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta-text-box .secondary-heading {
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.cta-img-box {
+  background: linear-gradient(
+      to right bottom,
+      rgb(250, 229, 211, 0.35),
+      rgb(230, 126, 34, 0.35)
+    ),
+    url(../content/img/eating.jpg);
+  background-size: cover;
+  background-position: center;
 }
